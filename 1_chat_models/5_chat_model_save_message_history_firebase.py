@@ -17,16 +17,25 @@ Steps to replicate this example:
         - https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev
     - Set your default project to the new Firebase project you created
 5. Enable the Firestore API in the Google Cloud Console:
-    - https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=crewai-automation
+    - https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=lang-chain-a52b2
 """
 
 load_dotenv()
 
 # Setup Firebase Firestore
-PROJECT_ID = "langchain-demo-abf48"
+PROJECT_ID = "lang-chain-a52b2"
 SESSION_ID = "user_session_new"  # This could be a username or a unique ID
 COLLECTION_NAME = "chat_history"
 
+#
+#
+# Run the command
+#    gcloud init
+#    gcloud auth application-default login
+#    gcloud info
+#    gcloud config get-value project -< gives current project
+#
+#
 # Initialize Firestore Client
 print("Initializing Firestore Client...")
 client = firestore.Client(project=PROJECT_ID)
@@ -42,7 +51,7 @@ print("Chat History Initialized.")
 print("Current Chat History:", chat_history.messages)
 
 # Initialize Chat Model
-model = ChatOpenAI()
+model = ChatOpenAI(model="gpt-4o-mini")
 
 print("Start chatting with the AI. Type 'exit' to quit.")
 
