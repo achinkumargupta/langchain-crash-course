@@ -31,6 +31,12 @@ Welcome to the LangChain Crash Course repository! This repo contains all the cod
 2. Install dependencies using Poetry:
 
    ```bash
+   (1) For Codespaces
+   poetry config virtualenvs.in-project false
+   poetry install --only main --no-root
+   poetry cahce clear pypi --all
+
+   (2)
    poetry install --no-root
    ```
 
