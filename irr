@@ -1,0 +1,49 @@
+1. Interest Rate Environment
+
+| Rate Environment | Bond Type                   | Action Bias       | Reason                               |
+| ---------------- | --------------------------- | ----------------- | ------------------------------------ |
+| Rates falling    | Non-callable, long duration | **Buy**           | Positive convexity, max price upside |
+| Rates falling    | Callable                    | **Sell**          | Negative convexity, call risk        |
+| Rates rising     | Any long-duration bond      | **Sell / Reduce** | Duration risk dominates              |
+| Rates rising     | Short-duration / FRB        | **Hold / Buy**    | Limited price sensitivity            |
+| Stable rates     | Callable (high coupon)      | **Hold**          | Carry strategy works                 |
+| Stable rates     | Non-callable                | **Hold**          | Limited valuation change             |
+
+
+2. Credit Fundamentals
+| Credit Trend          | Bond Type    | Action Bias       | Reason                             |
+| --------------------- | ------------ | ----------------- | ---------------------------------- |
+| Credit improving      | Non-callable | **Buy / Hold**    | Spread compression + upside        |
+| Credit improving      | Callable     | **Sell**          | Higher call probability            |
+| Credit deteriorating  | Any          | **Sell**          | Asymmetric downside risk           |
+| Credit watch negative | Any          | **Reduce / Sell** | Spread widening precedes downgrade |
+
+
+3. Liquidity Conditions
+
+| Liquidity Condition | Cash Need       | Action Bias    | Reason                        |
+| ------------------- | --------------- | -------------- | ----------------------------- |
+| Liquidity stress    | No              | **Hold**       | Avoid forced selling          |
+| Liquidity stress    | Yes (near-term) | **Sell**       | Liquidity overrides valuation |
+| Normal liquidity    | No              | **Hold / Buy** | Prices reflect fundamentals   |
+
+
+4. Inflation Regime (Real Returns)
+
+| Inflation Trend   | Bond Type                | Action Bias    | Reason                |
+| ----------------- | ------------------------ | -------------- | --------------------- |
+| Inflation rising  | Long-duration fixed-rate | **Sell**       | Real returns negative |
+| Inflation rising  | Short-duration           | **Hold / Buy** | Faster repricing      |
+| Inflation rising  | Floating-rate / ILB      | **Buy**        | Inflation protection  |
+| Inflation falling | Long-duration            | **Buy**        | Disinflation tailwind |
+
+
+5. Callable Bond–Specific Overlay (Most Important)
+
+This overrides many other signals.
+| Situation                         | Action Bias      |
+| --------------------------------- | ---------------- |
+| Yield-to-call < Yield-to-maturity | **Sell**         |
+| Near call date + falling rates    | **Sell**         |
+| Rising rates + callable bond      | **Hold**         |
+| Issuer has history of calling     | **Avoid / Sell** |
