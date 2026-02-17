@@ -31,20 +31,20 @@ print("\nContent only:")
 
 print(response.choices[0].message.content)
 
-# print("\n=== Streaming Example ===")
+print("\n=== Streaming Example ===")
 
-# # ---- Streaming Response ----
-# response_stream = completion(
-#     model="google/gemini-2.5-flash",
-#     messages=[
-#         {"role": "user", "content": "List 3 fun facts about Python programming."},
-#     ],
-#     api_key=google_api_key,
-#     stream=True,
-# )
+# ---- Streaming Response ----
+response_stream = completion(
+    model="gemini/gemini-2.5-flash",
+    messages=[
+        {"role": "user", "content": "List 3 fun facts about Python programming."},
+    ],
+    api_key=google_api_key,
+    stream=True,
+)
 
-# print("Streaming response:")
-# for chunk in response_stream:
-#     if chunk.choices[0].delta.content:
-#         print(chunk.choices[0].delta.content, end="", flush=True)
-# print("\n")
+print("Streaming response:")
+for chunk in response_stream:
+    if chunk.choices[0].delta.content:
+        print(chunk.choices[0].delta.content, end="", flush=True)
+print("\n")
