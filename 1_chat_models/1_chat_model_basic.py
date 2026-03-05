@@ -5,7 +5,7 @@
 # poetry lock
 # poetry install --no-root
 # poetry env info
-# eval $(poetry env activate)
+# eval $(poetry env activate) or poetry shell
 # poetry show python-dotenv
 # poetry env list
 

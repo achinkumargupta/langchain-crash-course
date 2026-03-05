@@ -4,7 +4,7 @@
 from dotenv import load_dotenv
 from litellm import completion
 import os
-
+import google.generativeai as genai
 # Load environment variables from .env
 load_dotenv()
 
@@ -12,10 +12,14 @@ load_dotenv()
 print("=== Available Google Gemini Models ===")
 google_api_key = os.environ.get("GOOGLE_API_KEY")
 
+genai.configure(api_key=google_api_key)
+for m in genai.list_models():
+    print(m.name, m.supported_generation_methods)
+    
 print("\n=== Simple Completion Example ===")
 
 # ---- Simple Completion with litelLM ----
-# LiteLLM model format for Google: "google/gemini-1.5-flash"
+# LiteLLM model format for Google: "google/gemini-2.5-flash"
 
 response = completion(
     model="gemini/gemini-2.5-flash",
@@ -29,6 +33,8 @@ print("Response:")
 print(response)
 print("\nContent only:")
 
+print(response)
+print(type(response))
 print(response.choices[0].message.content)
 
 print("\n=== Streaming Example ===")
@@ -43,8 +49,11 @@ response_stream = completion(
     stream=True,
 )
 
+print(type(response_stream))
+print(response_stream)
 print("Streaming response:")
 for chunk in response_stream:
     if chunk.choices[0].delta.content:
+        print("---")
         print(chunk.choices[0].delta.content, end="", flush=True)
 print("\n")
