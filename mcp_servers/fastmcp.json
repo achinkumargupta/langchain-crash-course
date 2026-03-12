@@ -1,0 +1,13 @@
+{
+  "name": "Book Tools Server",
+  "version": "1.0.0",
+  "description": "FastMCP 2.0 server providing tools for working with books",
+  "entrypoint": "book_tools_server.py:mcp",
+  "transport": {
+    "type": "stdio"
+  },
+  "metadata": {
+    "author": "LangChain Crash Course",
+    "homepage": "https://gofastmcp.com"
+  }
+}

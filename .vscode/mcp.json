@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "book-server": {
+            "command": "python",
+            "args": ["mcp_servers/book_tools_server.py"]
+        }
+    }
+}

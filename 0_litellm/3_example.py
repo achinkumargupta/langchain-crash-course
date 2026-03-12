@@ -73,6 +73,12 @@ response = completion(
 )
 
 # Extract the tool call from the response, note we don't have to parse now!
+"""Traditionally, parsing the LLM’s responses required engineering strict output formats,
+validating them, and handling errors when the model deviated from the expected structure. 
+With function calling, the model now natively supports structured responses, ensuring we receive either a valid function call or a standard text reply.
+This shift significantly reduces the complexity of response handling, allowing developers to focus on the core logic of their applications rather than on error-prone parsing and validation processes.
+"""
+
 print(response)
 print(response.choices[0].message)
 tool = response.choices[0].message.tool_calls[0]
